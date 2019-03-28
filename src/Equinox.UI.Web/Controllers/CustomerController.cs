@@ -61,7 +61,8 @@ namespace Equinox.UI.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(CustomerViewModel customerViewModel)
         {
-            if (!ModelState.IsValid) return View(customerViewModel);
+            if (!ModelState.IsValid)
+                return View(customerViewModel);
             _customerAppService.Register(customerViewModel);
 
             if (IsValidOperation())

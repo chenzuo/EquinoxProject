@@ -68,7 +68,7 @@ namespace Equinox.Services.Api.Controllers
             if (result.Succeeded)
             {
                 // User claim for write customers data
-                await _userManager.AddClaimAsync(user, new Claim("Customers", "Write"));
+                await _userManager.AddClaimAsync(user, new Claim("Customers", "Remove"));
 
                 await _signInManager.SignInAsync(user, false);
                 _logger.LogInformation(3, "User created a new account with password.");
